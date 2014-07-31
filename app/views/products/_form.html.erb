@@ -1,0 +1,23 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <p>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </p>
+    <%= f.association :category %>
+    <%= f.association :details, as: :check_boxes %>
+    <%= f.input :discontinued %>
+    <p>
+      <%= f.label :released_on %>
+      <%= f.date_select :released_on %>
+    </p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
